@@ -7,7 +7,8 @@ import ProductDetail from "./components/tugas2/ProductDetail.vue";
 import NotFound from "./components/NotFound.vue";
 // import ProductSearch from "./components/tugas3/ProductSearch.vue";
 import UserWishlist from "./components/tugas4/UserWishlist.vue";
-import User from "./components/tugas4/User.vue";
+// import User from "./components/tugas4/User.vue";
+import User from "./components/tugas7/User.vue";
 import UserProfile from "./components/tugas4/UserProfile.vue";
 import UserOrder from "./components/tugas4/UserOrder.vue";
 import ProductSearch from "./components/tugas6/ProductSearch.vue";
@@ -86,18 +87,22 @@ const router = createRouter({
         {
           path: "",
           component: UserProfile,
+          name: "user"
         },
         {
           path: "profile",
           component: UserProfile,
+          name: "user-profile"
         },
         {
           path: "order",
           component: UserOrder,
+          name: "user-order"
         },
         {
           path: "wishlist",
           component: UserWishlist,
+          name: "user-wishlist"
         },
       ],
     },
