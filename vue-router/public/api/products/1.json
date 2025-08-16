@@ -1,0 +1,9 @@
+{
+  "id": 1,
+  "name": "Product One",
+  "description": "This is the first product.",
+  "price": 100.0,
+  "available": true
+}
+
+
