@@ -11,7 +11,8 @@ import UserWishlist from "./components/tugas4/UserWishlist.vue";
 import User from "./components/tugas7/User.vue";
 import UserProfile from "./components/tugas4/UserProfile.vue";
 import UserOrder from "./components/tugas4/UserOrder.vue";
-import ProductSearch from "./components/tugas6/ProductSearch.vue";
+// import ProductSearch from "./components/tugas6/ProductSearch.vue";
+import ProductSearch from "./components/tugas8/ProductSearch.vue";
 
 // object router
 const router = createRouter({
@@ -74,6 +75,7 @@ const router = createRouter({
     {
       path: "/products/search",
       component: ProductSearch,
+      name: "product-search",
     },
     {
       path: "/wishlist",
