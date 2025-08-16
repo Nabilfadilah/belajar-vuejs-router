@@ -84,6 +84,11 @@ const router = createRouter({
       // repeatable param
       path: "/:notfound(.*)",
       component: NotFound,
+      // Tugas 16: Per-route Navigation Guards
+      beforeEnter: (to, from, next) => {
+        console.log(`Route not found: ${to.fullPath}`); // log jika route tidak ditemukan
+        next(); // lanjutkan ke komponen NotFound
+      }
     },
     {
       // pake query parameter search di URL
@@ -232,4 +237,16 @@ const router = createRouter({
   history: createWebHistory(),
 });
 
-createApp(App).use(router).mount("#app");
+// Tugas 16
+// Global Navigation Guards
+router.beforeEach((to, from, next) => {
+  console.info(`beforeEach navigation to ${to.fullPath} from ${from.fullPath}`); // log sebelum navigasi
+  next();
+}),
+
+// Global After Hooks
+router.afterEach((to, from) => {
+  console.info(`afterEach navigation to ${to.fullPath} from ${from.fullPath}`); // log setelah navigasi
+}),
+
+createApp(App).use(router).mount("#app")
