@@ -51,6 +51,13 @@ const router = createRouter({
       path: "/",
       component: Home,
     },
+
+    // Tugas 10: Redirect
+    {
+      path: "/home",
+      redirect: "/",
+    },
+
     {
       path: "/about",
       component: About,
@@ -81,6 +88,20 @@ const router = createRouter({
       component: ProductSearch,
       name: "product-search",
     },
+
+    // Tugas 10: Redirect
+    {
+      path: "/products/search/:keywords", // :keywords adalah parameter dinamis
+      redirect: (route) => {
+        return {
+          name: "product-search",
+          query: {
+            product: route.params.keywords,
+          },
+        };
+      },
+    },
+
     {
       path: "/wishlist",
       component: UserWishlist,
@@ -89,7 +110,7 @@ const router = createRouter({
       // router children
       path: "/users",
       component: User,
-      
+
       // Named View
       children: [
         {
@@ -97,7 +118,7 @@ const router = createRouter({
           name: "user",
           components: {
             header: UserHeader,
-            default: UserProfile, 
+            default: UserProfile,
           },
         },
         {
@@ -105,7 +126,7 @@ const router = createRouter({
           name: "user-profile",
           components: {
             header: UserHeader,
-            default: UserProfile, 
+            default: UserProfile,
           },
         },
         {
@@ -114,7 +135,7 @@ const router = createRouter({
           components: {
             header: UserHeader,
             default: UserOrder,
-            footer: UserOrderFooter, 
+            footer: UserOrderFooter,
           },
         },
         {
@@ -122,7 +143,7 @@ const router = createRouter({
           name: "user-wishlist",
           components: {
             header: UserHeader,
-            default: UserWishlist, 
+            default: UserWishlist,
             footer: UserWishlistFooter,
           },
         },
