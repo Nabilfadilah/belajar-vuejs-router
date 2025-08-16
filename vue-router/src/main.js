@@ -3,7 +3,8 @@ import App from "./App.vue";
 import {createRouter, createWebHistory} from "vue-router";
 import Home from "./components/tugas1/Home.vue";
 import About from "./components/tugas1/About.vue";
-import ProductDetail from "./components/tugas2/ProductDetail.vue";
+// import ProductDetail from "./components/tugas2/ProductDetail.vue";
+import ProductDetail from "./components/tugas12/ProductDetail.vue";
 import NotFound from "./components/NotFound.vue";
 // import ProductSearch from "./components/tugas3/ProductSearch.vue";
 import UserWishlist from "./components/tugas4/UserWishlist.vue";
@@ -66,15 +67,16 @@ const router = createRouter({
       component: About,
       sensitive: true, // sencitive route
     },
-    {
-      path: "/products/:id",
-      component: ProductDetail,
-    },
     // {
-    //   // matching syntax
-    //   path: "/products/:id(\\d+)",
-    //   component: ProductDetail
+    //   path: "/products/:id",
+    //   component: ProductDetail,
     // },
+    {
+      // matching syntax
+      path: "/products/:id(\\d+)",
+      component: ProductDetail,
+      props: true, // mengirimkan param ke props (Tugas 12)
+    },
     {
       // repeatable param
       path: "/:notfound(.*)",
