@@ -5,6 +5,7 @@ import Home from "./components/tugas1/Home.vue";
 import About from "./components/tugas1/About.vue";
 import ProductDetail from "./components/tugas2/ProductDetail.vue";
 import NotFound from "./components/NotFound.vue";
+import ProductSearch from "./components/tugas3/ProductSearch.vue";
 
 // object router
 const router = createRouter({
@@ -31,6 +32,12 @@ const router = createRouter({
       // repeatable param
       path: "/:notfound(.*)",
       component: NotFound
+    },
+    {
+      // pake query parameter search di URL
+      // contoh: /products/search?product=Samsung
+      path: "/products/search",
+      component: ProductSearch
     }
   ],
   history: createWebHistory(),

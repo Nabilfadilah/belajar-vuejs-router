@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Samsung Galaxy S21",
+    "description": "Description of Product A",
+    "price": 100.0
+  },
+  {
+    "id": 2,
+    "name": "Samsung Galaxy S20",
+    "description": "Description of Product B",
+    "price": 150.0
+  },
+  {
+    "id": 3,
+    "name": "Vivo X60",
+    "description": "Description of Product C",
+    "price": 200.0
+  },
+  {
+    "id": 4,
+    "name": "Oppo Reno 5",
+    "description": "Description of Product D",
+    "price": 250.0
+  },
+  {
+    "id": 5,
+    "name": "Iphone 12",
+    "description": "Description of Product E",
+    "price": 300.0
+  },
+  {
+    "id": 6,
+    "name": "Iphone 13",
+    "description": "Description of Product F",
+    "price": 350.0
+  },
+  {
+    "id": 7,
+    "name": "Infinix Zero 8",
+    "description": "Description of Product G",
+    "price": 400.0
+  },
+  {
+    "id": 8,
+    "name": "Xiaomi Mi 10",
+    "description": "Description of Product H",
+    "price": 450.0
+  },
+  {
+    "id": 9,
+    "name": "Samsung",
+    "description": "Description of Product I",
+    "price": 500.0
+  },
+  {
+    "id": 10,
+    "name": "Vivo V21",
+    "description": "Description of Product J",
+    "price": 550.0
+  }
+]
