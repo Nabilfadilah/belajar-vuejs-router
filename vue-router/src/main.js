@@ -76,6 +76,9 @@ const router = createRouter({
       path: "/products/:id(\\d+)",
       component: ProductDetail,
       props: true, // mengirimkan param ke props (Tugas 12)
+      props: route => (
+        { id: route.params.id } // mengirimkan id sebagai props (Tugas 13)
+      )
     },
     {
       // repeatable param
