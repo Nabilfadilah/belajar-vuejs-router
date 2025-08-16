@@ -10,14 +10,14 @@ import NotFound from "./components/NotFound.vue";
 import UserWishlist from "./components/tugas4/UserWishlist.vue";
 // import User from "./components/tugas4/User.vue";
 // import User from "./components/tugas7/User.vue";
-import UserProfile from "./components/tugas4/UserProfile.vue";
-import UserOrder from "./components/tugas4/UserOrder.vue";
+// import UserProfile from "./components/tugas4/UserProfile.vue";
+// import UserOrder from "./components/tugas4/UserOrder.vue";
 // import ProductSearch from "./components/tugas6/ProductSearch.vue";
 import ProductSearch from "./components/tugas8/ProductSearch.vue";
-import UserHeader from "./components/tugas9/UserHeader.vue";
-import UserOrderFooter from "./components/tugas9/UserOrderFooter.vue";
-import UserWishlistFooter from "./components/tugas9/UserWishlistFooter.vue";
-import User from "./components/tugas9/User.vue";
+// import UserHeader from "./components/tugas9/UserHeader.vue";
+// import UserOrderFooter from "./components/tugas9/UserOrderFooter.vue";
+// import UserWishlistFooter from "./components/tugas9/UserWishlistFooter.vue";
+// import User from "./components/tugas9/User.vue";
 
 // object router
 const router = createRouter({
@@ -117,45 +117,94 @@ const router = createRouter({
     {
       // router children
       path: "/users",
-      component: User,
+      component: () => import("./components/tugas9/User.vue"), // Lazy loading, supaya komponen User di-load saat dibutuhkan
 
-      // Named View
-      children: [
+      // Lazy loading, supaya komponen User di-load saat dibutuhkan
+       children: [
         {
           path: "",
           name: "user",
           components: {
-            header: UserHeader,
-            default: UserProfile,
+            header: () => import("./components/tugas9/UserHeader.vue"), // Lazy loading untuk UserHeader
+            default: () => import("./components/tugas4/UserProfile.vue"), // Komponen default yang akan ditampilkan
+            // header: UserHeader,
+            // default: UserProfile,
           },
         },
         {
           path: "profile",
           name: "user-profile",
           components: {
-            header: UserHeader,
-            default: UserProfile,
+            default: () => import("./components/tugas4/UserProfile.vue"), // Lazy loading untuk UserProfile 
+            header: () => import("./components/tugas9/UserHeader.vue"), // Lazy loading untuk UserHeader
+            // header: UserHeader,
+            // default: UserProfile,
           },
         },
         {
           path: "order",
           name: "user-order",
           components: {
-            header: UserHeader,
-            default: UserOrder,
-            footer: UserOrderFooter,
+            header: () => import("./components/tugas9/UserHeader.vue"), // Lazy loading untuk UserHeader
+            default: () => import("./components/tugas4/UserOrder.vue"), // Lazy loading untuk UserOrder
+            footer: () => import("./components/tugas9/UserOrderFooter.vue"), //
+            // header: UserHeader,
+            // default: UserOrder,
+            // footer: UserOrderFooter,
           },
         },
         {
           path: "wishlist",
           name: "user-wishlist",
           components: {
-            header: UserHeader,
-            default: UserWishlist,
-            footer: UserWishlistFooter,
+            header: () => import("./components/tugas9/UserHeader.vue"), // Lazy loading untuk UserHeader
+            default: () => import("./components/tugas4/UserWishlist.vue"), // Lazy loading untuk UserWishlist
+            footer: () => import("./components/tugas9/UserWishlistFooter.vue"), //
+            // header: UserHeader,
+            // default: UserWishlist,
+            // footer: UserWishlistFooter,
           },
         },
       ],
+
+      // Named View
+      // children: [
+      //   {
+      //     path: "",
+      //     name: "user",
+      //     components: {
+      //       header: UserHeader,
+      //       default: UserProfile,
+      //     },
+      //   },
+      //   {
+      //     path: "profile",
+      //     name: "user-profile",
+      //     components: {
+      //       header: UserHeader,
+      //       default: UserProfile,
+      //     },
+      //   },
+      //   {
+      //     path: "order",
+      //     name: "user-order",
+      //     components: {
+      //       header: UserHeader,
+      //       default: UserOrder,
+      //       footer: UserOrderFooter,
+      //     },
+      //   },
+      //   {
+      //     path: "wishlist",
+      //     name: "user-wishlist",
+      //     components: {
+      //       header: UserHeader,
+      //       default: UserWishlist,
+      //       footer: UserWishlistFooter,
+      //     },
+      //   },
+      // ],
+
       // children: [
       //   {
       //     path: "",
