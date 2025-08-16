@@ -6,9 +6,39 @@ import About from "./components/tugas1/About.vue";
 import ProductDetail from "./components/tugas2/ProductDetail.vue";
 import NotFound from "./components/NotFound.vue";
 import ProductSearch from "./components/tugas3/ProductSearch.vue";
+import UserWishlist from "./components/tugas4/UserWishlist.vue";
+import User from "./components/tugas4/User.vue";
+import UserProfile from "./components/tugas4/UserProfile.vue";
+import UserOrder from "./components/tugas4/UserOrder.vue";
 
 // object router
 const router = createRouter({
+  // router children
+  // routes: [
+  //   {
+  //     path: "/users",
+  //     component: User,
+  //     children: [
+  //       {
+  //         path: '',
+  //         component: UserProfile
+  //       },
+  //       {
+  //         path: 'profile',
+  //         component: UserProfile
+  //       },
+  //       {
+  //         path: 'order',
+  //         component: UserOrder
+  //       },
+  //       {
+  //         path: 'wishlist',
+  //         component: UserWishlist
+  //       }
+  //     ]
+  //   }
+  // ],
+
   routes: [
     {
       path: "/",
@@ -21,7 +51,7 @@ const router = createRouter({
     },
     {
       path: "/products/:id",
-      component: ProductDetail
+      component: ProductDetail,
     },
     // {
     //   // matching syntax
@@ -31,14 +61,41 @@ const router = createRouter({
     {
       // repeatable param
       path: "/:notfound(.*)",
-      component: NotFound
+      component: NotFound,
     },
     {
       // pake query parameter search di URL
       // contoh: /products/search?product=Samsung
       path: "/products/search",
-      component: ProductSearch
-    }
+      component: ProductSearch,
+    },
+    {
+      path: "/wishlist",
+      component: UserWishlist,
+    },
+    {
+      // router children
+      path: "/users",
+      component: User,
+      children: [
+        {
+          path: "",
+          component: UserProfile,
+        },
+        {
+          path: "profile",
+          component: UserProfile,
+        },
+        {
+          path: "order",
+          component: UserOrder,
+        },
+        {
+          path: "wishlist",
+          component: UserWishlist,
+        },
+      ],
+    },
   ],
   history: createWebHistory(),
 });
