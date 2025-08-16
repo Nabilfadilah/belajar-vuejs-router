@@ -50,6 +50,9 @@ const router = createRouter({
     {
       path: "/",
       component: Home,
+      props: { // penggunaan props untuk mengirim data ke komponen (Tugas 11)
+        title: "Home Page Component",
+      }
     },
 
     // Tugas 10: Redirect
