@@ -9,6 +9,17 @@ Kita akan buat route /users, dan kita akan buat children route untuk /profile, /
 </script>
 
 <template>
+  <!-- <div>
+    <h1>User</h1>
+    <ul>
+        <li><a href="/users/profile">Profile</a></li>
+        <li><a href="/users/order">Order</a></li>
+        <li><a href="/users/wishlist">Wishlist</a></li>
+    </ul>
+    <RouterVIew />
+    <div>put footer here</div>
+  </div> -->
+  
   <div>
     <h1>User</h1>
     <div>put header here</div>
